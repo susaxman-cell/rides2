@@ -1156,18 +1156,22 @@ function sendConfirmation() {
     "time"
   ).value;
 
-  const flight =
-  document.getElementById(
-    "flight"
-  ).value || "N/A";
+ const flight =
+document.getElementById(
+  "flight"
+).value || "N/A";
 
-  const airportInfo =
-  pickup.toUpperCase().includes("SAV")
-    ? `
+const tripInfo = `
 
-Flight: ${flight} | Date: ${date} | Time: ${time}
-`
-    : "";
+Flight:
+${flight}
+
+Date:
+${date}
+
+Time:
+${time}
+`;
 
   const dropoff =
     document.getElementById(
@@ -1207,7 +1211,7 @@ ${driverPhone.length === 10
   ? `(${driverPhone.slice(0,3)}) ${driverPhone.slice(3,6)}-${driverPhone.slice(6)}`
   : driverPhone}
 
-${airportInfo}
+${tripInfo}
 
 Pickup:
 ${pickup}
