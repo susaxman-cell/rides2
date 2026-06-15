@@ -1,0 +1,19 @@
+name: Run Bash Script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bash-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Bash Commands
+        run: |
+          echo "Hello from GitHub Actions"
+          pwd
+          ls -la
+          docker --version
